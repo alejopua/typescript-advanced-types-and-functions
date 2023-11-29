@@ -1,4 +1,4 @@
-import { addProduct, products } from "./product/product.services";
+import { addProduct, products, updateProduct } from "./product/product.services";
 import { faker } from '@faker-js/faker';
 
 
@@ -17,3 +17,11 @@ for (let index = 0; index < 5; index++) {
 }
 
 console.log('Product added!', products);
+
+const product1 = products[0];
+
+const rta = updateProduct(product1.id, {
+    name: 'Shoes'
+})
+
+console.log('Product 1', rta);
