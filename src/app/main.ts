@@ -1,5 +1,5 @@
-import { addProduct, products, updateProduct } from "./product/product.services";
-import { faker } from '@faker-js/faker';
+import { addProduct, products, updateProduct, findProduct } from "./product/product.services";
+import { faker, tr } from '@faker-js/faker';
 
 
 for (let index = 0; index < 5; index++) {
@@ -25,3 +25,9 @@ const rta = updateProduct(product1.id, {
 })
 
 console.log('Product 1', rta);
+
+const rta2 = findProduct({
+    isNew: true
+})
+
+console.log('Find Products: ', rta2);
