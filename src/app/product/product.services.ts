@@ -26,7 +26,7 @@ export const findProduct = (dto: FindProductDto): Product[] => {
     return productsFiltered;
 }
 
-export const updateProduct = (idTo: string | number, changes: UpdateProductDto): Product => {
+export const updateProduct = (idTo: Product['id'] | number, changes: UpdateProductDto): Product => {
     const index = products.findIndex((item)=> item.id === idTo);
     const productOk = products[index];
     products[index] = {
